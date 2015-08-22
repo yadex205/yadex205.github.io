@@ -1,1 +1,0 @@
-(function(){document.addEventListener("DOMContentLoaded",function(){smoothScroll.init()})})();
