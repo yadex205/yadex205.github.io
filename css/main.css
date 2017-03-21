@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   height: 100%;
   width: 100%; }
@@ -16,39 +17,143 @@ ul {
 a {
   color: inherit; }
 
-body {
-  color: #333;
-  font-family: 'Inconsolata', monospace, sans-serif; }
-
 .global-header {
   position: absolute;
-  width: 100%;
-  height: 96px;
-  padding: 0 48px;
-  font-size: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 48px;
+  font-family: 'Patua One', inherit;
   z-index: 1000; }
-  .global-header .global-menu {
-    line-height: 96px;
-    font-weight: bolder; }
-    .global-header .global-menu li {
-      display: inline-block;
-      float: left; }
-      .global-header .global-menu li:not(:first-child) {
-        margin-left: 48px; }
-    .global-header .global-menu .global-menu-logo {
-      height: 36px;
-      vertical-align: sub; }
-    .global-header .global-menu a {
-      opacity: 0.5;
-      transition: opacity 0.4s; }
-      .global-header .global-menu a:hover {
-        opacity: 1.0; }
+
+.global-header-content {
+  max-width: 960px;
+  margin: 0 auto; }
+
+.global-header-logo {
+  height: 36px; }
+
+.global-header-menu {
+  height: 36px;
+  float: right; }
+
+.global-header-menu-item {
+  display: inline-block;
+  line-height: 36px;
+  float: left;
+  font-size: 24px;
+  color: #333;
+  opacity: 0.5;
+  transition: opacity 0.2s; }
+  .global-header-menu-item:not(:last-child) {
+    margin-right: 36px; }
+  .global-header-menu-item:hover {
+    opacity: 1.0; }
+
+@media screen and (max-width: 720px) {
+  .global-header {
+    position: fixed;
+    padding: 18px;
+    background-color: white;
+    z-index: 1000; }
+  .global-header-logo {
+    display: block;
+    margin: 0 auto;
+    height: 24px; }
+  .global-header-menu {
+    display: none; } }
 
 .global-footer {
-  padding: 36px 48px; }
+  padding: 0 48px 36px;
+  font-family: 'Patua One', inherit; }
+
+.global-footer-menu {
+  font-size: 18px;
+  padding-top: 36px;
+  margin-bottom: 24px;
+  border-top: 1px solid lightgray; }
+  .global-footer-menu:after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.global-footer-menu-item {
+  float: left;
+  color: #aaa; }
+  .global-footer-menu-item:not(:first-child) {
+    margin-left: 24px; }
+
+.global-footer-copyright {
+  font-size: 14px;
+  color: lightgray; }
+  .global-footer-copyright .smartphone {
+    display: none;
+    text-align: center; }
+
+@media screen and (max-width: 720px) {
+  .global-footer {
+    padding: 36px 24px; }
+  .global-footer-copyright .smartphone {
+    display: block; }
+  .global-footer-copyright .pc {
+    display: none; } }
+
+.section-header {
+  position: relative;
+  padding-top: 150px;
+  height: 200px;
+  width: 100%; }
+
+.section-header-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.section-header-title {
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bolder;
+  line-height: 200px;
+  font-family: 'Patua One', inherit; }
+  .section-header-title:after {
+    content: ' =='; }
+  .section-header-title:before {
+    content: '== '; }
+
+.text-content-section {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 24px; }
+  .text-content-section h2, .text-content-section h3, .text-content-section h4, .text-content-section h5, .text-content-section h6 {
+    font-family: 'Patua One', YuMincho, 'Yu Mincho', inherit;
+    padding: 12px 0; }
+  .text-content-section h2, .text-content-section h3 {
+    border-bottom: 1px solid lightgray; }
+
+body {
+  color: #333;
+  font-family: 'YuMincho', 'Yu Mincho', 'ヒラギノ明朝 ProN W3', serif, inherit; }
+
+article {
+  max-width: 720px;
+  margin: 0 auto; }
+
+code {
+  display: block;
+  font-family: Inconsolata, monospace;
+  background-color: #eee;
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 12px 18px; }
 
 .content {
-  padding: 96px 48px 0; }
+  padding: 96px 48px; }
   .content h1.strap {
     position: relative;
     height: 240px;
@@ -77,19 +182,12 @@ body {
     content: ' --'; }
   .content h1, .content h2, .content h3 {
     margin-top: 48px; }
-  .content article {
-    font-family: serif; }
-
-.top-cover {
-  height: 100%;
-  width: 100%;
-  background-image: url("/image/bg.jpg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  vertical-align: bottom; }
-  .top-cover .description {
-    position: absolute;
-    bottom: 0;
-    padding: 48px;
-    opacity: 0.5; }
+  .content h3, .content h4, .content h5, .content h6 {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid lightgray;
+    padding: 12px 0; }
+  .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-family: 'Patua One', YuMincho, 'Yu Mincho', inherit;
+    text-align: center; }
