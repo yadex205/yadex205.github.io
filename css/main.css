@@ -1,4 +1,8 @@
+html {
+  height: 100%; }
+
 body {
+  height: 100%;
   margin: 0;
   background-color: #222;
   color: #ccc;
@@ -13,13 +17,11 @@ h2 {
   text-transform: uppercase; }
 
 .global-header {
+  height: 100%;
   overflow-x: hidden;
   overflow-y: hidden; }
-  .global-header .title {
-    margin: 24px;
-    font-size: 14vw;
-    font-weight: 900;
-    line-height: 100%; }
+  .global-header .p5-sketch-title {
+    height: 100%; }
 
 .global-content-root {
   margin: 24px; }
